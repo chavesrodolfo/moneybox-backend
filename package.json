@@ -1,0 +1,28 @@
+{
+  "name": "money-box",
+  "version": "1.0.0",
+  "description": "Money Box",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chavesrodolfo/moneybox-backend.git"
+  },
+  "author": "chavesrodolfo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chavesrodolfo/moneybox-backend/issues"
+  },
+  "homepage": "https://github.com/chavesrodolfo/moneybox-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
