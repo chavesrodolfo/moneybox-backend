@@ -22,7 +22,7 @@ module.exports = {
     },
 
     async create(request, response) {
-        const { title, description, value } = request.body;
+        const { title, description, value, currentValue } = request.body;
 
         const user_id = request.headers.authorization;
 
@@ -32,6 +32,7 @@ module.exports = {
             title,
             description,
             value,
+            currentValue,
             user_id,
             created_at
         });
