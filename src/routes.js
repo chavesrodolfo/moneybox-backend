@@ -16,6 +16,7 @@ routes.post('/users', UserController.create);
 routes.get('/targets', TargetController.index);
 routes.post('/targets', TargetController.create);
 routes.delete('/targets/:id', TargetController.delete);
+routes.put('/targets/:id', TargetController.update);
 
 routes.get('/profile', ProfileController.index);
 

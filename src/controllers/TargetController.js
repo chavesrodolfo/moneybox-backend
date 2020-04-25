@@ -58,5 +58,35 @@ module.exports = {
             .delete();
 
         return response.status(204).send();
+    },
+
+    async update(request, response) {
+        const { id } = request.params;
+        const user_id = request.headers.authorization;
+        const { title, description, value, currentValue } = request.body;
+
+        const targets = await connection('targets')
+            .select('user_id')
+            .where('id', id)
+            .first();
+
+        if (targets.user_id !== user_id) {
+            return response.status(401).json({ error: 'Operation not permitted' });
+        }
+
+        const updated_at = new Date();
+
+        const resp = await connection('targets')
+        .where({ id: id })
+        .update({
+            title,
+            description,
+            value,
+            currentValue,
+            user_id,
+            updated_at
+        });
+
+        return response.status(204).send();
     }
 }
